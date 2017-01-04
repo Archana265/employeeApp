@@ -17,7 +17,7 @@ public class EmployeeController {
 	private EmployeeService employeeServiceImpl;
 	@RequestMapping(value = "employee", method = RequestMethod.GET)
 	public String saveEmployee(Employee employee){
-		
+		logger.info("from EmployeeController.class saveEmployee(Employee employee)");
 		employeeServiceImpl.saveEmployee(employee);
 		return "redirect:/employee" ;
 		

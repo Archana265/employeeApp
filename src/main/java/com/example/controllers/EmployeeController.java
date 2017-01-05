@@ -23,6 +23,13 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeServiceImpl;
 	
+	@RequestMapping(value = "employee", method = RequestMethod.GET)
+	public String saveEmployee(Employee employee){
+		logger.info("from EmployeeController.class saveEmployee(Employee employee)");
+		employeeServiceImpl.saveEmployee(employee);
+		return "redirect:/employee" ;
+		
+	}
 	@RequestMapping(value = "/employee/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Employee> getEmployee(@PathVariable("id") long id) {
         System.out.println("Fetching Employee with id " + id);
@@ -61,3 +68,5 @@ public class EmployeeController {
     }
 
 }
+
+	

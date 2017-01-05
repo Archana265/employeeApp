@@ -22,4 +22,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeRepository.findOne(id);
 	}
 
+	@Override
+	public void deleteEmployee(long id) {
+		employeeRepository.delete(id);
+		
+	}
+
 }
